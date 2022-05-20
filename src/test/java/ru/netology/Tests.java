@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.*;
 class Tests {
 
     public String generateDate(int days) {
-        return LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        return LocalDate.now().plusDays(days).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
 
 
@@ -35,6 +35,7 @@ class Tests {
         page.pressButton();
         $("[data-test-id='success-notification']").shouldBe(visible)
                 .shouldHave(text("Встреча успешно запланирована на "));
+        page.inputDate(generateDate(6));
         page.pressButton();
         page.succesNewDate();
 
