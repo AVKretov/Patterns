@@ -34,10 +34,12 @@ class Tests {
         page.checkAgreement();
         page.pressButton();
         $("[data-test-id='success-notification']").shouldBe(visible)
-                .shouldHave(text("Встреча успешно запланирована на "));
+                .shouldHave(text("Встреча успешно запланирована на "+ generateDate(3)));
         page.inputDate(generateDate(6));
         page.pressButton();
         page.succesNewDate();
+        $("[data-test-id='success-notification']").shouldBe(visible)
+                .shouldHave(text("Встреча успешно запланирована на "+ generateDate(6)));
 
 
     }

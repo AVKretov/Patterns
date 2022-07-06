@@ -18,10 +18,6 @@ public class LoginPage {
 
     }
 
-    void inputDefaultCity() {
-        $x("//input[@placeholder='Город']").
-                setValue(LoginPageData.getDefaultPerson().getCity());
-    }
 
     void inputDate(String date) {
         $x("//input[@placeholder='Дата встречи']").sendKeys(Keys.CONTROL + "A");
@@ -42,19 +38,12 @@ public class LoginPage {
         $x("//input[@name='name']").setValue(LoginPageData.randomPerson().getName());
     }
 
-    void inputDefaultName() {
-        $x("//input[@name='name']").setValue(LoginPageData.getDefaultPerson().getName());
-    }
 
     void inputRandomPhone() {
         $x("//input[@name='phone']").
                 setValue(LoginPageData.randomPerson().getPhone());
     }
 
-    void inputDefaultPhone() {
-        $x("//input[@name='phone']").
-                setValue(LoginPageData.getDefaultPerson().getPhone());
-    }
 
     void checkAgreement() {
         $x("//*[@data-test-id='agreement']").click();

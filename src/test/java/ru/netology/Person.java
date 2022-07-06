@@ -1,10 +1,9 @@
 package ru.netology;
 
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
+import lombok.Value;
+
+@Value
 public class Person {
     private String city;
     private String name;
